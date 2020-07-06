@@ -1,28 +1,26 @@
 <template>
-  <div class='ui basic content center aligned segment'>
-
+  <v-container>
     <v-btn icon v-on:click="openForm" v-show="!isCreating">
         <v-icon color="grey lighten-1">mdi-plus-circle</v-icon>
     </v-btn>
-
     <v-form ref="form" v-show="isCreating">
         <v-text-field
             v-model="titleText"
-            label="Title"
-        ></v-text-field>
+            label="Title" >
+        </v-text-field>
         <v-text-field
             v-model="contentText"
-            label="Content"
-        ></v-text-field>
-        <v-btn class="mr-4" v-on:click="sendForm()">Save</v-btn>
-        <v-btn class="mr-4" v-on:click="closeForm">Cancel</v-btn>
+            label="Content" >
+        </v-text-field>
+        <v-btn class="mr-4" v-on:click="sendForm()"> Save </v-btn>
+        <v-btn class="mr-4" v-on:click="closeForm()"> Cancel </v-btn>
     </v-form>
-  </div>
+  </v-container>
 </template>
 
 <script>
 export default {
-    name: 'CreateToDo',
+  name: 'CreateToDo',
   data() {
     return {
       titleText: '',
@@ -38,8 +36,8 @@ export default {
       this.isCreating = false;
     },
     sendForm() {
-      if (this.titleText.length > 0) {
-        const title = this.titleText;
+        let title;
+        this.titleText == '' ? title = "New ToDo" : title = this.titleText;
         const content = this.contentText;
         this.$emit('create-todo', {
           title,
@@ -49,7 +47,6 @@ export default {
         this.titleText = '';
         this.contentText = '';
         this.isCreating = false;
-      }
     },
   },
 };

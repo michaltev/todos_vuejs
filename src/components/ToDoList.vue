@@ -1,27 +1,16 @@
 <template>
   <v-container>
-
-    <v-list
-      subheader
-      two-line
-      flat
-    >
+    <v-list subheader two-line flat>
       <v-subheader>Your To Do List</v-subheader>
-
-      <v-list-item-group
-        multiple
-      >
+      <v-list-item-group multiple >
           <ToDo v-on:delete-todo="deleteTodo" 
                 v-on:complete-todo="completeTodo" 
                 v-on:reopen-todo="reopenTodo"
                 v-for="(todo, i) in todos" 
                 :key="i" 
                 :todo.sync="todo"/>
-
       </v-list-item-group>
     </v-list>
-
-
     <CreateToDo v-on:create-todo="createTodo"/>
   </v-container>
 </template>
