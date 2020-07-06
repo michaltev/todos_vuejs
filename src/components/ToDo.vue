@@ -5,7 +5,7 @@
                 <v-list-item-action>
                     <v-checkbox
                         v-model="todo.done"
-                        v-on:click="changeStatus(todo)"
+                        v-on:click.stop="changeStatus(todo)"
                     ></v-checkbox>
                 </v-list-item-action>
 

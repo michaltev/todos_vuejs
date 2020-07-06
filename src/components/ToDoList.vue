@@ -6,7 +6,7 @@
       two-line
       flat
     >
-      <v-header>Your To Do List</v-header>
+      <v-subheader>Your To Do List</v-subheader>
 
       <v-list-item-group
         multiple
