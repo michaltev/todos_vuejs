@@ -21,15 +21,19 @@
       </v-list-item-group>
     </v-list>
 
+
+    <CreateToDo v-on:create-todo="createTodo"/>
   </v-container>
 </template>
 
 <script>
 import ToDo from './ToDo';
+import CreateToDo from './CreateToDo';
 export default {
   name: 'ToDoList',
   components: {
     ToDo,
+    CreateToDo
   },
   data() {
     return {
@@ -52,8 +56,11 @@ export default {
 },
   methods: {
     deleteTodo(todo) {
-        const todoIndex = this.todos.indexOf(todo);
-        this.todos.splice(todoIndex, 1);
+      const todoIndex = this.todos.indexOf(todo);
+      this.todos.splice(todoIndex, 1);
+    },
+    createTodo(newTodo) {
+      this.todos.push(newTodo);
     },
     completeTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
