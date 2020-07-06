@@ -1,4 +1,16 @@
-# todos_vue
+# ToDos List!
+
+## Description
+This is a To Do list made using Vue.js! :green_heart:
+Things you can do:
+* See a list of To Do tasks
+* Add new tasks
+* Edit the tasks
+* Mark tasks as completed
+* Delete tasks
+
+Have fun :green_heart:
+
 
 ## Project setup
 ```
